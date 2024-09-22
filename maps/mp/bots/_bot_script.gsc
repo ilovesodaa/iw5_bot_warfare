@@ -2455,7 +2455,7 @@ bot_think_camp_loop()
 	
 	self SetScriptGoal( campSpot.origin, 16 );
 	
-	time = randomintrange( 10, 20 );
+	time = randomintrange( 30, 90 );
 	
 	self BotNotifyBotEvent( "camp", "go", campSpot, time );
 	
@@ -2514,7 +2514,17 @@ killCampAfterTime( time )
 	self endon( "disconnect" );
 	self endon( "kill_camp_bot" );
 	
-	wait time + 0.05;
+	timeleft = maps\mp\gametypes\_gamelogic::gettimeremaining() / 1000;
+	
+	while ( time > 0 && timeleft >= 60 )
+	{
+		wait 1;
+		timeleft = maps\mp\gametypes\_gamelogic::gettimeremaining() / 1000;
+		time--;
+	}
+	
+	wait 0.05;
+	
 	self ClearScriptGoal();
 	self ClearScriptAimPos();
 	
