@@ -61,5 +61,5 @@ do_botremoteangles( pitch, yaw )
 
 do_botangles( angles )
 {
-	self botangles( angles[ 0 ], angles[ 1 ], angles[ 2 ] );
+	self botangles( angles );
 }
