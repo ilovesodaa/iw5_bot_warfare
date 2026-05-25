@@ -1,21 +1,21 @@
 name: gsc-tool
-
 on: [push]
-
 jobs:
   main-win:
     name: Compile on Windows
     runs-on: windows-latest
-
     steps:
       - name: Check out files
         uses: actions/checkout@main
-
       - name: Setup gsc-tool
         uses: xensik/setup-gsc-tool@v1
         with:
           version: '1.4.0'
-
       - name: Run script
         run: |
           ci/gsc-tool.bat
+      - name: Upload compiled files
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-gscbin
+          path: iw5/**/*.gscbin
