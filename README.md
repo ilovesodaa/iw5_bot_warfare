@@ -1,6 +1,6 @@
 ![GitHub Logo](/bw-assets/bw-logo.png)
 
-# IW5 Bot Warfare
+# IW5 Bot Warfare Changes
 Bot Warfare is a GSC mod for the [PlutoniumIW5 project](https://plutonium.pw/).
 
 It aims to add playable AI to the multiplayer games of Modern Warfare 3.
